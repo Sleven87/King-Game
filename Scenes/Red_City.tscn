@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://mxm4y3rcdfcv"]
 
 [ext_resource type="Script" uid="uid://cjbb6ahc5dplu" path="res://Scripts/Knight_Animation.gd" id="1_tpxrg"]
-[ext_resource type="Texture2D" uid="uid://cs1v4f0iuodct" path="res://Sprites/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier.png" id="2_ed5tc"]
-[ext_resource type="Texture2D" uid="uid://07cit0a5k11" path="res://Sprites/Tiny RPG Character Asset Pack v1.02 -Free Soldier&Orc/Soldier/Soldier/Soldier-Walk.png" id="3_jag78"]
+[ext_resource type="Texture2D" uid="uid://c1n66k7aqgmom" path="res://Sprites/Sprite_Sheets/Soldier/Soldier.png" id="2_ed5tc"]
+[ext_resource type="Texture2D" uid="uid://07cit0a5k11" path="res://Sprites/Sprite_Sheets/Soldier/Soldier-Walk.png" id="3_jag78"]
 [ext_resource type="Texture2D" uid="uid://clbw4wyjpil2j" path="res://Sprites/Red_City.png" id="4_tpxrg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldddn"]

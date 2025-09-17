@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://7i1rpp23wfgb"]
+
+[ext_resource type="Texture2D" uid="uid://cnx36cfp3ce0d" path="res://Sprites/Sprite_Sheets/All tools mini-pack by SnowHex/Tools.png" id="1_3c8vn"]
+[ext_resource type="Script" uid="uid://b31mviyoikqxq" path="res://Scripts/sword_Hover.gd" id="1_887f7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_887f7"]
+size = Vector2(639, 638)
+
+[node name="AnimatableBody2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_887f7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3c8vn")
+region_enabled = true
+region_rect = Rect2(0, 642, 639, 638)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_887f7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

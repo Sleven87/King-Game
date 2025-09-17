@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgnvofn45wmjj"]
+
+[ext_resource type="PackedScene" uid="uid://c1j7dgsl770g6" path="res://Assets/Characters/Player.tscn" id="1_lh408"]
+[ext_resource type="PackedScene" uid="uid://7i1rpp23wfgb" path="res://Assets/Items/sword.tscn" id="3_d5kgu"]
+[ext_resource type="Texture2D" uid="uid://7n0t7ortg1ge" path="res://Sprites/WorldMap.png" id="4_kgaeb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jm6"]
+size = Vector2(105, 107.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xkqd"]
+size = Vector2(97, 98)
+
+[sub_resource type="Animation" id="Animation_d5kgu"]
+resource_name = "sword"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-467.99997, 219.99998), Vector2(-465.99997, 209.00002)]
+}
+
+[sub_resource type="Animation" id="Animation_lh408"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-467.99997, 219.99998)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axjw6"]
+_data = {
+&"RESET": SubResource("Animation_lh408"),
+&"sword": SubResource("Animation_d5kgu")
+}
+
+[node name="Game" type="Node2D"]
+
+[node name="OverworldMap" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="OverworldMap"]
+
+[node name="Player" parent="OverworldMap/Camera2D" instance=ExtResource("1_lh408")]
+scale = Vector2(3, 3)
+
+[node name="WorldMap" type="Sprite2D" parent="OverworldMap"]
+z_index = -1
+texture = ExtResource("4_kgaeb")
+
+[node name="Red_City_Col" type="CollisionShape2D" parent="OverworldMap/WorldMap"]
+position = Vector2(225.5, -56.75)
+shape = SubResource("RectangleShape2D_c1jm6")
+
+[node name="Blue_City_Col" type="CollisionShape2D" parent="OverworldMap/WorldMap"]
+position = Vector2(-335.5, -216)
+shape = SubResource("RectangleShape2D_4xkqd")
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("3_d5kgu")]
+position = Vector2(-467.99997, 219.99998)
+scale = Vector2(0.1, 0.1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_axjw6")
+}
+autoplay = "sword"
