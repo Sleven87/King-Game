@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=4 uid="uid://bgnvofn45wmjj"]
+[gd_scene load_steps=29 format=4 uid="uid://bgnvofn45wmjj"]
 
 [ext_resource type="PackedScene" uid="uid://c1j7dgsl770g6" path="res://Assets/Characters/Player.tscn" id="1_lh408"]
 [ext_resource type="PackedScene" uid="uid://7i1rpp23wfgb" path="res://Assets/Items/sword.tscn" id="3_d5kgu"]
 [ext_resource type="Texture2D" uid="uid://cf64dv3q3l3mi" path="res://Sprites/Sprite_Sheets/World_Tiles/TX Plant.png" id="4_32ata"]
+[ext_resource type="Texture2D" uid="uid://cwfho4p2exeap" path="res://Sprites/Sprite_Sheets/World_Tiles/BaseSet.png" id="4_ydhes"]
 [ext_resource type="Texture2D" uid="uid://nsevkjfybygs" path="res://Sprites/Sprite_Sheets/World_Tiles/TX Props.png" id="5_ydhes"]
 [ext_resource type="Texture2D" uid="uid://b35y276iuxchl" path="res://Sprites/Sprite_Sheets/World_Tiles/TX Shadow Plant.png" id="6_1o5wy"]
 [ext_resource type="Texture2D" uid="uid://dt05yvd6sor6f" path="res://Sprites/Sprite_Sheets/World_Tiles/TX Shadow.png" id="7_whv2i"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bis2tjdniye80" path="res://Sprites/Sprite_Sheets/World_Tiles/TX Tileset Stone Ground.png" id="10_hew11"]
 [ext_resource type="Texture2D" uid="uid://cl24neup0sd1l" path="res://Sprites/Sprite_Sheets/World_Tiles/TX Tileset Wall.png" id="11_o6y56"]
 [ext_resource type="Texture2D" uid="uid://245f2vuishua" path="res://Sprites/Sprite_Sheets/World_Tiles/Extra/TX Plant with Shadow.png" id="12_3cq2l"]
+[ext_resource type="Script" uid="uid://lt8y3hff22jv" path="res://Scenes/Castle_Load.gd" id="13_ydhes"]
 
 [sub_resource type="Animation" id="Animation_ryrex"]
 resource_name = "float"
@@ -70,6 +72,79 @@ texture = ExtResource("4_32ata")
 21:11/0 = 0
 17:11/size_in_atlas = Vector2i(4, 4)
 17:11/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1o5wy"]
+texture = ExtResource("4_ydhes")
+39:37/size_in_atlas = Vector2i(1, 2)
+39:37/0 = 0
+38:37/0 = 0
+38:38/0 = 0
+32:38/size_in_atlas = Vector2i(1, 2)
+32:38/0 = 0
+33:39/0 = 0
+34:39/0 = 0
+35:39/0 = 0
+36:39/0 = 0
+37:38/size_in_atlas = Vector2i(1, 2)
+37:38/0 = 0
+38:39/0 = 0
+30:34/size_in_atlas = Vector2i(1, 2)
+30:34/0 = 0
+29:34/size_in_atlas = Vector2i(1, 3)
+29:34/0 = 0
+28:34/size_in_atlas = Vector2i(1, 2)
+28:34/0 = 0
+27:34/size_in_atlas = Vector2i(1, 2)
+27:34/0 = 0
+26:34/size_in_atlas = Vector2i(1, 2)
+26:34/0 = 0
+26:36/size_in_atlas = Vector2i(1, 2)
+26:36/0 = 0
+30:37/0 = 0
+29:38/size_in_atlas = Vector2i(1, 2)
+29:38/0 = 0
+26:38/size_in_atlas = Vector2i(1, 2)
+26:38/0 = 0
+25:38/size_in_atlas = Vector2i(1, 2)
+25:38/0 = 0
+24:38/size_in_atlas = Vector2i(1, 2)
+24:38/0 = 0
+24:36/size_in_atlas = Vector2i(1, 2)
+24:36/0 = 0
+25:34/size_in_atlas = Vector2i(1, 3)
+25:34/0 = 0
+25:31/size_in_atlas = Vector2i(1, 2)
+25:31/0 = 0
+29:31/size_in_atlas = Vector2i(1, 2)
+29:31/0 = 0
+28:32/0 = 0
+28:31/0 = 0
+27:31/0 = 0
+30:31/0 = 0
+35:32/0 = 0
+35:33/0 = 0
+35:34/0 = 0
+34:34/0 = 0
+33:34/0 = 0
+33:33/0 = 0
+33:32/0 = 0
+34:32/0 = 0
+34:33/0 = 0
+38:31/size_in_atlas = Vector2i(2, 2)
+38:31/0 = 0
+39:33/size_in_atlas = Vector2i(1, 2)
+39:33/0 = 0
+38:35/size_in_atlas = Vector2i(1, 2)
+38:35/0 = 0
+36:35/0 = 0
+35:35/0 = 0
+34:35/0 = 0
+33:35/0 = 0
+36:36/0 = 0
+35:36/0 = 0
+34:36/0 = 0
+33:36/0 = 0
+32:36/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2i8c"]
 texture = ExtResource("5_ydhes")
@@ -396,6 +471,10 @@ sources/6 = SubResource("TileSetAtlasSource_dcbvu")
 sources/7 = SubResource("TileSetAtlasSource_i84bm")
 sources/8 = SubResource("TileSetAtlasSource_2qfrk")
 sources/9 = SubResource("TileSetAtlasSource_odp8n")
+sources/11 = SubResource("TileSetAtlasSource_1o5wy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o5wy"]
+size = Vector2(85, 94)
 
 [node name="Game" type="Node2D"]
 
@@ -406,24 +485,44 @@ sources/9 = SubResource("TileSetAtlasSource_odp8n")
 [node name="Player" parent="OverworldMap/Camera2D" instance=ExtResource("1_lh408")]
 scale = Vector2(3, 3)
 
-[node name="AnimatableBody2D" parent="." instance=ExtResource("3_d5kgu")]
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="AnimatableBody2D" parent="Enviroment" instance=ExtResource("3_d5kgu")]
 z_index = 1
 position = Vector2(-505.99997, -293.99994)
 scale = Vector2(0.1, 0.1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enviroment/AnimatableBody2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_ydhes")
 }
 autoplay = "float"
 
-[node name="Enviroment_Decorations" type="TileMapLayer" parent="."]
+[node name="Enviroment_Decorations2" type="TileMapLayer" parent="Enviroment"]
+z_index = 1
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAKAAAACwAmAB8AAAD4//7/CwAeAB8AAAD3//7/CwAbAB8AAAD2//7/CwAZAB8AAAD1//7/CwAcACAAAAD0//7/CwAdACIAAAD4/wAACwAcACIAAAD3/wAACwAYACQAAAD2/wAACwAaACQAAAD1/wAACwAZACYAAAD0/wAACwAdACYAAAA=")
+tile_set = SubResource("TileSet_d5kgu")
+
+[node name="Enviroment_Decorations" type="TileMapLayer" parent="Enviroment"]
 texture_filter = 1
 tile_map_data = PackedByteArray("AADw/wEABgAIAAgAAAD5/wEABgAIAAgAAAABAAEABgAIAAgAAAAGAAEABgAIAAgAAAAPAAEABgAIAAgAAAAXAAEABgAIAAgAAADi/w4ABgAIAAAAAAAaAA8ABgAMAAAAAAD5/w4ABgAMAAQAAAAgAO//BgAMAAQAAAAnABcABgAMAAQAAAAIABgABgAIAAQAAADs/xYABgAIAAQAAAAPAPj/BgAMAAAAAAAmAAUABgAMAAAAAAABAAYABgAAAAgAAAAAAAwABgAFAAgAAAAAABMABgAFAAgAAAD4//3/BgAFAAgAAAD4//f/BgAFAAgAAADz//T/BgAIAAgAAADs//P/BQADABgAAADn//P/BwAAAAAAAADp//j/CAAaAAYAAADk//j/CAACAAwAAADd//j/CAACAAwAAADq/+3/CAASAAIAAADn/+3/BwAKAAAAAADh/+3/BwAAAAAAAADh//P/BwAAAAAAAADd/+3/BwAGAAAAAADd//P/BwAGAAAAAADb//P/BwAGAAAAAADb/+3/BwAGAAAAAAA=")
 tile_set = SubResource("TileSet_d5kgu")
 
-[node name="Enviroment_Grass" type="TileMapLayer" parent="."]
+[node name="Enviroment_Grass" type="TileMapLayer" parent="Enviroment"]
 z_index = -1
 texture_filter = 1
 tile_map_data = PackedByteArray("AADf/+//BgAAAAAAAADn/+//BgAAAAAAAADv/+//BgAAAAAAAAD3/+//BgAAAAAAAAD//+//BgAAAAAAAAAHAO//BgAAAAAAAAAPAO//BgAAAAAAAAAXAO//BgAAAAAAAADf//f/BgAAAAAAAADf////BgAAAAAAAADf/wcABgAAAAAAAADn//f/BgAAAAAAAADv//f/BgAAAAAAAAD3//f/BgAAAAAAAAD///f/BgAAAAAAAAAHAPf/BgAAAAAAAAAPAPf/BgAAAAAAAAAXAPf/BgAAAAAAAADn////BgAAAAAAAADv////BgAAAAAAAAD3////BgAAAAAAAAD/////BgAAAAAAAAAHAP//BgAAAAAAAAAPAP//BgAAAAAAAAAXAP//BgAAAAAAAADn/wcABgAAAAAAAADv/wcABgAAAAAAAAD3/wcABgAAAAAAAAD//wcABgAAAAAAAAAHAAcABgAAAAAAAAAPAAcABgAAAAAAAAAXAAcABgAAAAAAAADf/w8ABgAAAAAAAADf/xcABgAAAAAAAADn/w8ABgAAAAAAAADv/w8ABgAAAAAAAAD3/w8ABgAAAAAAAAD//w8ABgAAAAAAAAAHAA8ABgAAAAAAAAAPAA8ABgAAAAAAAAAXAA8ABgAAAAAAAADn/xcABgAAAAAAAADv/xcABgAAAAAAAAD3/xcABgAAAAAAAAD//xcABgAAAAAAAAAHABcABgAAAAAAAAAPABcABgAAAAAAAAAXABcABgAAAAAAAAAfABcABgAAAAAAAAAnABcABgAAAAAAAAAfAA8ABgAAAAAAAAAnAA8ABgAAAAAAAAAnAAcABgAAAAAAAAAnAP//BgAAAAAAAAAnAPf/BgAAAAAAAAAnAO//BgAAAAAAAAAfAO//BgAAAAAAAAAfAPf/BgAAAAAAAAAfAP//BgAAAAAAAAAfAAcABgAAAAAAAAA=")
 tile_set = SubResource("TileSet_d5kgu")
+
+[node name="Castle_Collider" type="Area2D" parent="."]
+z_index = 1
+collision_mask = 2
+script = ExtResource("13_ydhes")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Castle_Collider"]
+position = Vector2(506.5, 26)
+shape = SubResource("RectangleShape2D_1o5wy")
+
+[connection signal="body_entered" from="Castle_Collider" to="Castle_Collider" method="_on_body_entered"]
