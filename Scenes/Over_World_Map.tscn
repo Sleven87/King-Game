@@ -14,6 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://245f2vuishua" path="res://Sprites/Sprite_Sheets/World_Tiles/Extra/TX Plant with Shadow.png" id="12_3cq2l"]
 [ext_resource type="Script" uid="uid://lt8y3hff22jv" path="res://Scenes/Castle_Load.gd" id="13_ydhes"]
 
+[sub_resource type="Animation" id="Animation_32ata"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-505.99997, -293.99994)]
+}
+
 [sub_resource type="Animation" id="Animation_ryrex"]
 resource_name = "float"
 length = 2.0
@@ -29,21 +44,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-505.99997, -293.99994), Vector2(-504.99997, -284)]
-}
-
-[sub_resource type="Animation" id="Animation_32ata"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-505.99997, -293.99994)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ydhes"]
